@@ -29,5 +29,15 @@ class BasicsTest extends FlatSpec {
         assert(alwaysHappyFun() == "Yay")
     }
 
+    it should "create class with constructor and have constructor argument visible within the class" in {
+        class Traveller(from: String, to: String) {
+            def whereDoYouGo(): String = {
+                "I am travelling from "+from+" to "+to
+            }
+        }
+        val travellerFromWroclaw = new Traveller("Wroclaw", "Opole")
+        assert(travellerFromWroclaw.whereDoYouGo().contains("Wroclaw"))
+    }
+
 
 }
