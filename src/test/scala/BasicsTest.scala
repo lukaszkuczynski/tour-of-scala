@@ -43,4 +43,17 @@ class BasicsTest extends FlatSpec {
         assert(javaClone == java)
     }
 
+    it should "make Fenix singleton by it being an Object" in {
+        Fenix.createOrRecreateFromAshes()
+        val historyOfFenix = Fenix.createOrRecreateFromAshes()
+        assert(historyOfFenix == 2)
+    }
+
+    it should "treat trait as 'implementable interface' and let it know what is the joy of programming" in {
+        val currentJob = new WorkingAsDeveloper
+        assert(currentJob.earn().contains("Lots"))
+        val firstJob = new WorkingInElester
+        assert(firstJob.earn().contains("Little"))
+    }
+
 }

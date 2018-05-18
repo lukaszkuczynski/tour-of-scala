@@ -23,3 +23,28 @@ class Traveller(from: String, to: String) {
 
 case class ProgrammingLanguage(name: String, dynamicTyping: Boolean)
 
+object Fenix {
+    var livesCount = 0
+    def createOrRecreateFromAshes() ={
+        livesCount += 1
+        livesCount
+    }
+}
+
+trait EarningMoney {
+    def getHowMuch: String = {
+        ""
+    }
+
+    def earn(): String = {
+        getHowMuch + " of money"
+    }
+}
+
+class WorkingAsDeveloper extends EarningMoney {
+    override def getHowMuch: String = "Lots"
+}
+
+class WorkingInElester extends EarningMoney {
+    override def getHowMuch: String = "Little"
+}
