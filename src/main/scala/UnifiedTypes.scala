@@ -1,0 +1,7 @@
+object UnifiedTypes {
+
+}
+
+class MyClassIsFromAnyRef {
+
+}
