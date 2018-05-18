@@ -30,14 +30,17 @@ class BasicsTest extends FlatSpec {
     }
 
     it should "create class with constructor and have constructor argument visible within the class" in {
-        class Traveller(from: String, to: String) {
-            def whereDoYouGo(): String = {
-                "I am travelling from "+from+" to "+to
-            }
-        }
         val travellerFromWroclaw = new Traveller("Wroclaw", "Opole")
         assert(travellerFromWroclaw.whereDoYouGo().contains("Wroclaw"))
     }
 
+    it should "make case class good-ol-Pojo using magic 'case' keyword and I can use named arguments" in {
+        val python = ProgrammingLanguage(name = "Python", dynamicTyping = true)
+        val java = ProgrammingLanguage(name = "Java", dynamicTyping = false)
+        val javaClone = ProgrammingLanguage(name = "Java", dynamicTyping = false)
+        assert(python.toString.contains("Python"))
+        assert(python != java)
+        assert(javaClone == java)
+    }
 
 }

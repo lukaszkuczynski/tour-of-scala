@@ -11,3 +11,15 @@ object Basics {
     }
 
 }
+
+class Traveller(from: String, to: String) {
+    def whereDoYouGo(): String = {
+        "I am travelling from "+from+" to "+to
+    }
+
+    def iAmJustDoingNothingAndReturningNothingPoorUnitMethod(): Unit = {
+    }
+}
+
+case class ProgrammingLanguage(name: String, dynamicTyping: Boolean)
+
